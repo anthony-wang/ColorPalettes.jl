@@ -1,3 +1,5 @@
+using Colors
+
 # Converting colours using Colors.jl
 # https://juliagraphics.github.io/Colors.jl/latest/colorspaces.html#Converting-colors-1
 
@@ -26,6 +28,9 @@ c = ["#1b9e77",
 "#a6761d",
 "#666666"];
 
+# viridis, 20 colors
+using Makie
+c = Makie.to_colormap(:viridis)
 
 for i in c
     co = parse(Colorant, i)
@@ -36,7 +41,7 @@ for i in c
     println("$r\t\t$g\t\t$b")
 end
 
-# viridis
+# viridis, continuous
 c = [
     [0.267004, 0.004874, 0.329415],
     [0.268510, 0.009605, 0.335427],
